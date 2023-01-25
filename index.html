@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script type="text/javascript" src="mathsgame.js" defer></script>
+    <title>Reken Quiz</title>
+</head>
+
+<body>
+    <h1 id="heading">Quiz</h1>
+    
+    <div id="row">
+            <a href="#" onclick="setAdditionGame()">
+                <!--4 keer span om mooie buttons te creëren in css-->
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                &plus;
+            </a><br>
+
+            <a href="#" onclick="setSubtractionGame()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                &minus;
+            </a><br>
+
+            <a href="#" onclick="setDivisionGame()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                &divide;
+            </a><br>
+
+            <a href="#" onclick="setMultiplicationGame()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                &times;
+            </a><br>
+    </div>
+    
+            
+    
+    <p>Score: <span id="scoreBox">0</span></p>
+    
+    
+
+    <p id="vraag">Optellen, aftrekken, delen of vermenigvuldigen? Maak hierboven je keuze?</p>
+
+    <form id="quizForm" name="answerForm" onsubmit="checkAnswer();
+     return false;" action="#" data-gametype="">
+
+        Antwoord: <input type="number" name="answer">
+        <input type="hidden" name="rightAnswer">
+        <input class="submit" type="submit" value="Verzend"><br><br>
+        
+
+    </form>
+    <div class="show-answer"><span id="ans"><br></span></div><br>
+    <img src="img/feedback.png" id="feedback">
+
+    
+
+    
+</body>
+
+</html>
