@@ -3,4 +3,4 @@
 ### Learning tool  for kids to excercise basic calculations (+ - / *)
 
 
-[Demosite:](rob76xxx.github.io) 
+[Demosite:](https://rob76xxx.github.io/kids_calc_learningtool/) 
