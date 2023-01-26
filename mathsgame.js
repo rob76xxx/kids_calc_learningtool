@@ -11,24 +11,23 @@ let counter = 0;
 
 function setAdditionGame() {
     antwForm.setAttribute("data-gametype", "addition");
-    loop = setInterval(additionQuiz,100);
-    //additionQuiz();
+    //laat 1.5 sec lang plussommen zien
+    loop = setInterval(additionQuiz,150);
 }
 
 function setSubtractionGame() {
     antwForm.setAttribute("data-gametype", "subtraction");
-    loop = setInterval(subtractionQuiz,100);
-    //subtractionQuiz();    
+    loop = setInterval(subtractionQuiz,150);   
 }
 
 function setMultiplicationGame() {
-    antwForm.setAttribute("data-gametype", "multiplication");
-    multiplicationQuiz();  
+    antwForm.setAttribute("data-gametype", "multiplication"); 
+    loop = setInterval(multiplicationQuiz,150); 
 }
 
 function setDivisionGame() {
     antwForm.setAttribute("data-gametype", "division");
-    divisionQuiz();
+    loop = setInterval(divisionQuiz,150);
 }
 
 
@@ -82,8 +81,8 @@ let num2 = Math.floor(Math.random() *50);
  antwForm["rightAnswer"].value = (num1 + num2);
  
  
-
- if(counter>3){
+//Zodra er meer dan 5 sommen in de loop voorbij zijn gekomen clear interval en counter weer naar 0
+ if(counter>6){
     clearInterval(loop);
     counter = 0;
   }
@@ -96,16 +95,15 @@ function subtractionQuiz() {
     let num1 = Math.floor(Math.random() *30)+ 30;
     let num2 = Math.floor(Math.random() *30);
 
-   
-
  vraagBox.textContent = "Hoeveel is: " + num1 + " - " + num2 + " ?";
  antwForm["rightAnswer"].value = (num1 - num2);
- if(counter>3){
+
+ if(counter>6){
     clearInterval(loop);
     counter = 0;
   }
   counter++;
-}
+  }
 
 
 //Functie vermenigvuldigen
@@ -115,13 +113,17 @@ function multiplicationQuiz() {
 
  vraagBox.textContent = "Hoeveel is: " + num1 + " x " + num2 + " ?";
  antwForm["rightAnswer"].value = (num1 * num2);
-}
+
+ if(counter>6){
+    clearInterval(loop);
+    counter = 0;
+  }
+  counter++;
+  }
 
 
 //Functie delen
 function divisionQuiz(){
-    
-   
     
     let num2 = Math.round(Math.random() * 8);
     let num1 = Math.round(Math.random() * 10)  * num2 ;
@@ -136,10 +138,11 @@ function divisionQuiz(){
         antwForm["rightAnswer"].value = Math.round(num1 / num2);
        
     }
-
-    
-    
-
-
-};
+  
+if(counter>6){
+    clearInterval(loop);
+    counter = 0;
+  }
+  counter++;
+  };
 
